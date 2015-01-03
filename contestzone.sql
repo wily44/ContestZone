@@ -267,8 +267,8 @@ CREATE TABLE IF NOT EXISTS `users_tb11` (
 --
 
 INSERT INTO `users_tb11` (`id`, `high_school_graduation`, `username`, `password`, `join_date`, `first`, `last`, `about`, `school`, `email`, `type`) VALUES
-(2, 2015, 'teststudent', '3c9206f0c3049f64c2d359d1db55aa5c2163a7d9', '2014-11-16', 'Test', 'Student', 'A test student. Does not have administrator privileges.', 'School', 'student@student.com', 'student'),
-(1, 2015, 'testadmin', '743139240ff612253817440d98acb2ce7939fbb4', '2014-11-16', 'Test', 'Admin', 'A test administrator.', 'School', 'admin@admin.com', 'administrator');
+(1, 2015, 'teststudent', '3c9206f0c3049f64c2d359d1db55aa5c2163a7d9', '2014-11-16', 'Test', 'Student', 'A test student. Does not have administrator privileges.', 'School', 'student@student.com', 'student'),
+(2, 2015, 'testadmin', '743139240ff612253817440d98acb2ce7939fbb4', '2014-11-16', 'Test', 'Admin', 'A test administrator.', 'School', 'admin@admin.com', 'administrator');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -24,7 +24,7 @@ if(!isset($_SESSION)) {
  * Comment this part out when running CZ, and set these session variables elsewhere.
  */
 // We should write a template that does the basics.
-$_SESSION['user'] = 'testadmin';
+$_SESSION['user'] = 'teststudent';
 $_SESSION['id'] = 1;
 $_SESSION['contest_id'] = 1;
 $_SESSION['num_problems'] = 1;
