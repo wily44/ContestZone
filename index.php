@@ -24,12 +24,12 @@ if(!isset($_SESSION)) {
  * Comment this part out when running CZ, and set these session variables elsewhere.
  */
 // We should write a template that does the basics.
-$_SESSION['user'] = 'username';
+$_SESSION['user'] = 'testadmin';
 $_SESSION['id'] = 1;
 $_SESSION['contest_id'] = 1;
 $_SESSION['num_problems'] = 1;
 $_SESSION['contest_name'] = 'Test Contest #1';
-$_SESSION['contest_end'] = 1418700011;
+$_SESSION['contest_end'] = 1668864300;
 // END DEBUG MODE
 
 if(isset($_POST['get_contest_id'])) {
@@ -43,7 +43,8 @@ if(isset($_POST['get_contest_id'])) {
 		$_SESSION['num_problems'] = $arr['number_problems'];
 	}
 }
-date_default_timezone_set('America/Denver');
+// Workaround for the daylight savings bug
+//date_default_timezone_set('America/Denver');
 ?>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie9"><![endif]-->
