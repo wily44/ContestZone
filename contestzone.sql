@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2015 at 05:12 PM
+-- Generation Time: Jan 03, 2015 at 05:27 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `contestzone`
 --
+CREATE DATABASE IF NOT EXISTS `contestzone` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `contestzone`;
 
 -- --------------------------------------------------------
 
