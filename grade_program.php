@@ -18,7 +18,7 @@
 //note: grade_program.php and test_program.php are the 2 programs in the grading schema
 //note: www-data needs to be in visudo with nopassword option set to on
 $reldir = "./run_program/p/p".$_SERVER['argv'][1]."/";
-$absdir = "/var/www/programming/contestzone/run_program/p/p".$_SERVER['argv'][1]."/";
+$absdir = "/var/www/ContestZone/run_program/p/p".$_SERVER['argv'][1]."/";
 
 $connect = mysql_connect("localhost", "root", "pass");
 if(!connect) {
@@ -38,7 +38,7 @@ if(!$row) {
 	die();
 }
 
-exec("mkdir ".$absdir); //make the folder
+exec("sudo mkdir ".$absdir); //make the folder
 exec("sudo chmod -R 777 ".$absdir); //has to chmod to let test_program.php make stats on user program_tester
 
 $submission_id = $row[0];
@@ -102,7 +102,7 @@ if($cpp) {
 	$chrootpathcmp = $chrootdir."Main.cpp";
 	file_put_contents($absdir."Main.cpp", $codeMod);
 	exec("sudo chmod 775 ".$absdir."Main.cpp");
-	$cmd = 'sudo chroot /var/www/programming/contestzone/run_program/ su -c \'perl -w timeout.pl -t 5 "g++ -O2 -w -o '
+	$cmd = 'sudo chroot /var/www/ContestZone/run_program/ su -c \'perl -w timeout.pl -t 5 "g++ -O2 -w -o '
 			.$chrootdir.'a.out '.$chrootdir.'Main.cpp 2> '.$chrootdir.'compile_error.err 1> '
 			.$chrootdir.'compile.log" > '.$chrootdir.'compilestats.txt\' - program_tester';
 }
@@ -110,7 +110,7 @@ else if($java) {
 	$chrootpathcmp = $chrootdir."Main.java";
 	file_put_contents($absdir."Main.java", $codeMod);
 	exec("sudo chmod 775 ".$absdir."Main.java");
-	$cmd = 'sudo chroot /var/www/programming/contestzone/run_program/ su -c \'perl -w timeout.pl -t 5 "javac -Xlint:unchecked -nowarn -d '
+	$cmd = 'sudo chroot /var/www/ContestZone/run_program/ su -c \'perl -w timeout.pl -t 5 "javac -Xlint:unchecked -nowarn -d '
 			.$chrootdir.' '.$chrootdir.'Main.java 2> '
 			.$chrootdir.'compile_error.err 1> '.$chrootdir.'compile.log" 2> '
 			.$chrootdir.'compilestats.txt\' - program_tester';
@@ -153,8 +153,7 @@ if(strcmp("", $cmd) != 0) {
 			file_put_contents($absdir."verdict.txt", "CE");
 		}
 	}
-}
-
+} 
 if($cpp) {
 	exec("sudo chmod 775 ".$absdir."a.out");
 	$chrootpath = $chrootdir."a.out";

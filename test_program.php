@@ -17,7 +17,7 @@
 //note: grade_program.php and test_program.php are the 2 programs in the grading schema
 $number = $_SERVER['argv'][2];
 $absdir = "/p/p".$number."/";
-$chroot = "/var/www/programming/contestzone/run_program";
+$chroot = "/var/www/ContestZone/run_program";
 
 $st = 0;
 
@@ -27,7 +27,7 @@ $java = strcmp($language, "Java") === 0;
 $cpp = strcmp($language, "C++") === 0;
 $py = strcmp($language, "Python") === 0;
 
-chdir("/var/www/programming/contestzone/run_program/");
+chdir("/var/www/ContestZone/run_program/");
 if($cpp) {
 	$cmd = 'sudo chroot . su -c "perl -w timeout.pl -t 1 -m 64000 \''.$absdir.'a.out < '.$absdir.'grade.in > '
 			.$absdir.'grade.out 2> '.$absdir.'runtime_error.err\' 2> '
