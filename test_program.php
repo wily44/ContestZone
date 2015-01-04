@@ -34,13 +34,13 @@ if($cpp) {
 			.$absdir.'runtimestats.txt" - program_tester';
 }
 else if($java) {
-	$cmd = 'sudo chroot . su -c "perl -w timeout.pl -t 1 \'/usr/lib/jvm/java-6-sun-1.6.0.06/jre/bin/java -client -Xmx64m -classpath '
+	$cmd = 'sudo chroot . su -c "perl -w timeout.pl -t 1 \'java -client -Xmx64m -classpath '
 			.$absdir.' Main < '.$absdir.'grade.in > '
 			.$absdir.'grade.out 2> '.$absdir.'runtime_error.err\' 2> '
 			.$absdir.'runtimestats.txt" - program_tester';
 }
 else if($py) {
-	$cmd = 'sudo chroot . su -c "perl -w timeout.pl -t 3 -m 64000 \'/usr/bin/python2.5 -W ignore '.$absdir
+	$cmd = 'sudo chroot . su -c "perl -w timeout.pl -t 3 -m 64000 \'python2.5 -W ignore '.$absdir
 			.'Main.py < '.$absdir.'grade.in > '
 			.$absdir.'grade.out 2> '.$absdir.'runtime_error.err\' 2> '
 			.$absdir.'runtimestats.txt" - program_tester';
